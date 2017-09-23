@@ -19,6 +19,6 @@ rm $HEADER_DUMP_DEST
 CAS_ID=`curl -s -k -c $COOKIE_JAR https://$CAS_HOSTNAME:8443/cas/login?service=$ENCODED_DEST | grep name=.lt | sed 's/.*value..//' | sed 's/\".*//'`
 
 #Submit the login form, using the cookies saved in the cookie jar and the form submission ID just extracted. We keep the headers from this request as the return value should be a 302 including a "ticket" param which we'll need in the next request
-curl -v -k --data "username=$USERNAME&password=$PASSWORD&lt=$CAS_ID&_eventId=submit" -i -b $COOKIE_JAR -c $COOKIE_JAR https://$CAS_HOSTNAME:8443/cas/login?service=$ENCODED_DEST -D $HEADER_DUMP_DEST -o /dev/null
+curl -v -k -X POST --data "username=$USERNAME&password=$PASSWORD&lt=$CAS_ID&_eventId=submit" -i -b $COOKIE_JAR -c $COOKIE_JAR https://$CAS_HOSTNAME:8443/cas/login?service=$ENCODED_DEST -D $HEADER_DUMP_DEST -o /dev/null
 
 

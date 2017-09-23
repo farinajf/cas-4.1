@@ -178,8 +178,33 @@
         </entry>
     </util:map>
 
+<!--
     <bean id="serviceRegistryDao" class="org.jasig.cas.services.JsonServiceRegistryDao"
           c:configDirectory="${service.registry.config.location:classpath:services}" />
+-->
+    <bean id="serviceRegistryDao" class="org.jasig.cas.services.InMemoryServiceRegistryDaoImpl">
+        <property name="registeredServices">
+            <list>
+                <!-- A dedicated component to recognize OAuth Callback Authorization requests -->
+                <!-- By default, service ids only support regex patterns if/when needed -->
+                <bean class="org.jasig.cas.support.oauth.services.OAuthCallbackAuthorizeService"
+                    p:id="0"
+                    p:name="HTTP" 
+                    p:description="oauth wrapper callback url" 
+                    p:serviceId="${server.prefix}/oauth2.0/callbackAuthorize" />
+
+                <!-- Supports regex patterns by default for service ids --> 
+                <bean class="org.jasig.cas.support.oauth.services.OAuthRegisteredService"
+                    p:id="1"
+                    p:name="serviceName" 
+                    p:description="Service Description"
+                    p:serviceId="nginx"
+                    p:bypassApprovalPrompt="false" 
+                    p:clientId="client" 
+                    p:clientSecret="clientSecret" /> 
+            </list>
+        </property>
+    </bean>
 
     <bean id="auditTrailManager" class="org.jasig.inspektr.audit.support.Slf4jLoggingAuditTrailManager" />
 
