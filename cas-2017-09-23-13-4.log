@@ -1,0 +1,6 @@
+2017-09-23 13:59:49,918 INFO [org.jasig.cas.util.AutowiringSchedulerFactoryBean] - Starting Quartz Scheduler now
+2017-09-23 13:59:49,924 INFO [org.jasig.cas.CasEnvironmentContextListener] - [jetty/9.3.6.v20151106] has loaded the CAS application context
+2017-09-23 13:59:50,818 WARN [org.jasig.cas.util.BinaryCipherExecutor] - Secret key for signing is not defined. CAS will attempt to auto-generate the signing key
+2017-09-23 13:59:50,820 WARN [org.jasig.cas.util.BinaryCipherExecutor] - Generated signing key BBcsRrS_rlyqjkae4XQO7newk9JeXtsXG_gUhGjERwJZQ_1FibhCtDcB3O-gHeqsAljSB1qhUrYQoAGlGHccYg of size 512. The generated key MUST be added to CAS settings.
+2017-09-23 13:59:50,820 WARN [org.jasig.cas.util.BinaryCipherExecutor] - No encryption key is defined. CAS will attempt to auto-generate keys
+2017-09-23 13:59:50,821 WARN [org.jasig.cas.util.BinaryCipherExecutor] - Generated encryption key bvQNaqJprXLZZXFD of size 16. The generated key MUST be added to CAS settings.
