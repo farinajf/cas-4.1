@@ -201,7 +201,12 @@
                     p:serviceId="nginx"
                     p:bypassApprovalPrompt="false" 
                     p:clientId="client" 
-                    p:clientSecret="clientSecret" /> 
+                    p:clientSecret="clientSecret" />
+                <bean class="org.jasig.cas.services.RegexRegisteredService"
+                    p:id="2"
+                    p:name="HTTP and HTTPS service on localhost" 
+                    p:serviceId="^(http|https)://localhost.*"
+                    p:evaluationOrder="0" />
             </list>
         </property>
     </bean>
