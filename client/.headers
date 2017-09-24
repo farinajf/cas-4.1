@@ -1,9 +1,0 @@
-HTTP/1.1 200 OK
-Pragma: no-cache
-Expires: Thu, 01 Jan 1970 00:00:00 GMT
-Cache-Control: no-cache
-Cache-Control: no-store
-Content-Type: text/html;charset=utf-8
-Content-Length: 11770
-Server: Jetty(9.3.6.v20151106)
-
